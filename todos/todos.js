@@ -20,13 +20,16 @@ window.addEventListener('load', async () => {
 });
 
 todoForm.addEventListener('submit', async(e) => {
+    e.preventDefault();
     // on submit, create a todo, reset the form, and display the todos
-
+    let data = new FormData(todoForm);
+    // console.log('click', data.get('todo'));
 });
 
 async function displayTodos() {
+    let todos = [];
     // fetch the todos
-    const todos = await getTodos();
+    todos = await getTodos();
     // display the list of todos
     for (let todo of todos) {
         todosEl.append(renderTodo(todo));
