@@ -1,5 +1,6 @@
 export function renderTodo(todo) {
     // create a div and a p tag
+    
     // depending on whether the todo is complete, give the div the appropriate css class ('complete' or 'incomplete')
 
     // add the 'todo' css class no matter what
@@ -9,4 +10,5 @@ export function renderTodo(todo) {
     // append stuff
 
     // return the div
+    return div;
 }
