@@ -18,7 +18,8 @@ export async function deleteAllTodos() {
 
 export async function getTodos() {
     // get all todos for this user from supabase
-
+    const response = await client.from('todos').select();
+    console.log('got', response);
     return checkError(response);
 }
 
@@ -29,7 +30,7 @@ export async function completeTodo(id) {
 }
 
 export async function getUser() {
-    return client.auth.session();
+    return client.auth.session() && client.auth.session().user;
 }
 
 export async function checkAuth() {
