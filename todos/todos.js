@@ -18,11 +18,6 @@ const todoForm = document.querySelector('.todo-form');
 const logoutButton = document.querySelector('#logout');
 const deleteButton = document.querySelector('.delete-button');
 
-// window.addEventListener('load', async() => {
-//     // console.log('loaded');
-//     // await createTodo('todo');
-//     await displayTodos();
-// });
 
 todoForm.addEventListener('submit', async(e) => {
     e.preventDefault();
@@ -47,16 +42,20 @@ async function displayTodos() {
         // be sure to give each todo an event listener
         newTodo.addEventListener('click', async() => {
             console.log('clicked');
+            // on click, complete that todo
             await completeTodo(todo.id);
             displayTodos();
         });
         todosEl.append(newTodo);
     }
-
-    // on click, complete that todo
 }
 
 // add an on load listener that fetches and displays todos on load
+window.addEventListener('load', async() => {
+    // console.log('loaded');
+    // await createTodo('todo');
+    await displayTodos();
+});
 
 logoutButton.addEventListener('click', () => {
     logout();
@@ -65,6 +64,6 @@ logoutButton.addEventListener('click', () => {
 
 deleteButton.addEventListener('click', async() => {
     // delete all todos
-
+    
     // then refetch and display the updated list of todos
 });
