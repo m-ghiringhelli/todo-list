@@ -5,7 +5,7 @@ import {
     getTodos,
     logout,
     deleteAllTodos,
-    getUser, 
+    // getUser, 
 } from '../fetch-utils.js';
 import { renderTodo } from '../render-utils.js';
 
