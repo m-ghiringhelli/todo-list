@@ -29,9 +29,9 @@ export async function completeTodo(id) {
     return checkError(response);
 }
 
-// export async function getUser() {
-//     return client.auth.session() && client.auth.session().user;
-// }
+export async function getUser() {
+    return client.auth.session() && client.auth.session().user;
+}
 
 export async function checkAuth() {
     const user = await getUser();
